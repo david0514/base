@@ -7,3 +7,7 @@ jdk: oraclejdk8
 
 script:
   - ./gradle build --scan -s
+buildScan {
+  licenseAgreementUrl = "https://gradle.com/terms-of-service"
+  licenseAgree = "yes"
+}
