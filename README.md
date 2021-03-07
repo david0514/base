@@ -49,4 +49,4 @@ The figure below illustrates this behavior using an example.
 **Felkover betus teszt szoveg**<br>
 *Doltbetus szoveg*<br>
 ~~Athuzott sor~~<br>
-megre conflict test line branch-A
+megre conflict test line conflict solved
