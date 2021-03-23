@@ -6,6 +6,7 @@ import hu.bme.mit.train.interfaces.TrainSensor;
 import hu.bme.mit.train.interfaces.TrainUser;
 import hu.bme.mit.train.sensor.TrainSensorImpl;
 import hu.bme.mit.train.user.TrainUserImpl;
+import org.junit.Assert;
 
 public class TrainSystem {
 
@@ -23,6 +24,12 @@ public class TrainSystem {
 
 	public TrainUser getUser() {
 		return user;
+	}
+
+	public void TimerSpeedChange() throws InterruptedException {
+		TimerThread t = new TimerThread(controller);
+		Thread th = new Thread(t);
+		th.start();
 	}
 
 }

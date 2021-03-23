@@ -10,14 +10,14 @@ import hu.bme.mit.train.interfaces.TrainUser;
 import hu.bme.mit.train.system.TrainSystem;
 
 public class TrainSystemTest {
-
+	TrainSystem system;
 	TrainController controller;
 	TrainSensor sensor;
 	TrainUser user;
 	
 	@Before
 	public void before() {
-		TrainSystem system = new TrainSystem();
+		system = new TrainSystem();
 		controller = system.getController();
 		sensor = system.getSensor();
 		user = system.getUser();
@@ -69,12 +69,10 @@ public class TrainSystemTest {
 	}
 
 	@Test
-	public void TimerSpeedChange() throws InterruptedException {
-		TimerThread t = new TimerThread(controller);
+	public void TimerSpeedChangeTest() throws InterruptedException {
 		int r = controller.getReferenceSpeed();
 		user.overrideJoystickPosition(2);
-		Thread th = new Thread(t);
-		th.start();
+		system.TimerSpeedChange();
 		Thread.sleep(2500);
 		Assert.assertNotEquals(r, controller.getReferenceSpeed());
 	}
