@@ -68,5 +68,15 @@ public class TrainSystemTest {
 		Assert.assertEquals(3, controller.getReferenceSpeed());
 	}
 
-	
-}
+	@Test
+	public void TimerSpeedChange() throws InterruptedException {
+		TimerThread t = new TimerThread(controller);
+		int r = controller.getReferenceSpeed();
+		user.overrideJoystickPosition(2);
+		Thread th = new Thread(t);
+		th.start();
+		Thread.sleep(2500);
+		Assert.assertNotEquals(r, controller.getReferenceSpeed());
+	}
+
+	}
