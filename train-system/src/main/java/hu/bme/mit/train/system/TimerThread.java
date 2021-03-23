@@ -10,7 +10,7 @@ public class TimerThread implements Runnable{
     public void run() {
         while(true){
             c.followSpeed();
-            System.out.println("Aktualis sebesseg: " + c.getReferenceSpeed());
+            System.out.println("Jelenlegi sebesseg: " + c.getReferenceSpeed());
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
