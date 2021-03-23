@@ -13,8 +13,8 @@ public class TimerThread implements Runnable{
             System.out.println("Jelenlegi sebesseg: " + c.getReferenceSpeed());
             try {
                 Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            }catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
             }
         }
 
